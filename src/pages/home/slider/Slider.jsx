@@ -47,22 +47,22 @@ const Slider = () => {
     <div className="w-full bg-white px-2 sm:px-8 pt-12 flex justify-center">
       <div className="w-full max-w-4xl">
         {/* Heading and Button */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4 w-full">
           <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
             <h2
-              className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight mb-2 text-center sm:text-left"
+              className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-light tracking-tight mb-2 text-center sm:text-left"
               style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
             >
               LATEST ARTICLES
             </h2>
             {/* Logos */}
-            <div className="flex gap-6 sm:gap-8 mt-2 justify-center sm:justify-start w-full">
-              <img src={gulf} alt="Gulf News" className="h-6 object-contain" />
-              <img src={khaleej} alt="Khaleej Times" className="h-6 object-contain" />
-              <img src={lovin} alt="Lovin Dubai" className="h-6 object-contain" />
+            <div className="flex gap-4 sm:gap-6 md:gap-8 mt-2 justify-center sm:justify-start w-full flex-wrap">
+              <img src={gulf} alt="Gulf News" className="h-5 xs:h-6 object-contain" />
+              <img src={khaleej} alt="Khaleej Times" className="h-5 xs:h-6 object-contain" />
+              <img src={lovin} alt="Lovin Dubai" className="h-5 xs:h-6 object-contain" />
             </div>
           </div>
-          <button className="bg-black text-white px-6 py-2 rounded-md transition text-sm self-center sm:self-auto">
+          <button className="bg-black text-white px-4 py-2 rounded-md transition text-xs xs:text-sm self-center sm:self-auto w-full sm:w-auto">
             View All Articles
           </button>
         </div>
