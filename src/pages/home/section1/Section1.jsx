@@ -18,7 +18,7 @@ const headingVariants = {
 const Section1 = () => {
   return (
     <section
-      className="max-w-full h-screen bg-cover bg-center flex items-center justify-center"
+      className="max-w-full h-screen bg-cover -mt-10 bg-center flex items-center justify-center"
       style={{
         backgroundImage: `url(${Bg})`,
       }}
@@ -29,7 +29,7 @@ const Section1 = () => {
           initial="hidden"
           animate="visible"
           style={{ fontFamily: 'Luxerie' }}
-          className="text-white text-center text-4xl md:text-8xl leading-[0.8]"
+          className="text-white text-center text-4xl md:text-7xl leading-[0.8]"
         >
           BUILT FOR GENERATIONS.<br />
           CRAFTED WITH PURPOSE
