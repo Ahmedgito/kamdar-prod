@@ -14,8 +14,7 @@ const Home = () => {
        <Section2 />
        <Section4/>
        <Section5/>
-       <Section3/>
-       
+       <Section3/> 
        <Slider/>
        <Form/>  
        </>

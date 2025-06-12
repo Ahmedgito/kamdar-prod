@@ -1,6 +1,7 @@
 // components/Section3.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import bg from "../../../assets/formbg.png"; // Adjust the path as necessary
 
 const containerVariants = {
   hidden: {},
@@ -21,7 +22,7 @@ const Section3 = () => {
     <section
       className="relative w-full min-h-[700px] px-6 sm:px-10 md:px-20 lg:px-32 xl:px-80 py-16 font-['Lexend']"
       style={{
-        backgroundImage: `url('/src/assets/formbg.png')`,
+        backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
