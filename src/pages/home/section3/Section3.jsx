@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import bg from "../../../assets/formbg.png"; // Adjust the path as necessary
-
+import quote from "../../../assets/this.png"; // Adjust the path as necessary
 const containerVariants = {
   hidden: {},
   visible: {
@@ -59,7 +59,7 @@ const Section3 = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              src="/src/assets/this.png"
+              src={quote}
               alt="Quote or CEO"
               className="w-[320px] h-auto object-contain opacity-90 rounded-xl"
             />
