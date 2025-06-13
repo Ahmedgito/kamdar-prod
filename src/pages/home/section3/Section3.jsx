@@ -18,7 +18,7 @@ const fadeVariants = {
 const Section3 = () => {
   return (
     <section
-      className="relative w-full min-h-[700px] px-6 sm:px-10 md:px-20 lg:px-32 xl:px-80 py-16 font-['Lexend']"
+      className="reveal-on-scroll relative w-full min-h-[700px] px-6 sm:px-10 md:px-20 lg:px-32 xl:px-80 py-16 font-['Lexend']"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundSize: 'cover',
@@ -36,7 +36,7 @@ const Section3 = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               style={{ fontFamily: 'Luxerie' }}
-              className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-7xl font-normal leading-8 md:leading-14 tracking-tight mb-0"
+              className="reveal-on-scroll text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-7xl font-normal leading-8 md:leading-14 tracking-tight mb-0"
             >
               CEO MESSAGE
             </motion.h2>
@@ -45,7 +45,7 @@ const Section3 = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="text-lg sm:text-xl font-base mb-4"
+              className="reveal-on-scroll text-lg sm:text-xl font-base mb-4"
             >
               We founded Kamdar with a simple belief; that real estate should stand the test of time, both in design and in trust. Every home we build is a reflection of that legacy.
             </motion.p>
@@ -54,17 +54,17 @@ const Section3 = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="mt-4"
+              className="reveal-on-scroll mt-4"
             >
-              <div style={{ fontFamily: 'Luxerie' }} className="text-4xl font-medium">YUSUF KAMDAR</div>
-              <div className="text-base font-base">Chairman of Kamdar Developments</div>
+              <div style={{ fontFamily: 'Luxerie' }} className="reveal-on-scroll text-4xl font-medium">YUSUF KAMDAR</div>
+              <div className="reveal-on-scroll text-base font-base">Chairman of Kamdar Developments</div>
             </motion.div>
             <motion.button
               variants={fadeVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="mt-5 w-fit px-6 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition"
+              className="reveal-on-scroll mt-5 w-fit px-6 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition"
             >
               Get in Touch
             </motion.button>
@@ -76,7 +76,7 @@ const Section3 = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="md:flex hidden justify-center items-start z-0"
+            className="reveal-on-scroll md:flex hidden justify-center items-start z-0"
           >
             <img
               src={quote}
@@ -92,31 +92,31 @@ const Section3 = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="flex flex-col gap-8 mt-5 items-start"
+          className="reveal-on-scroll flex flex-col gap-8 mt-5 items-start"
         >
           <motion.h2
             variants={fadeVariants}
-            className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-normal tracking-tight mb-4"
+            className="reveal-on-scroll text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-normal tracking-tight mb-4"
             style={{ fontFamily: 'Luxerie' }}
           >
             GLOBAL LEGACY<br />LOCAL EXPERTISE
           </motion.h2>
 
           <div className="flex flex-col sm:flex-row gap-10 sm:gap-16">
-            <motion.div variants={fadeVariants}>
-              <h3 className="text-5xl sm:text-6xl font-medium bg-black text-transparent bg-clip-text">
+            <motion.div variants={fadeVariants} className="reveal-on-scroll">
+              <h3 className="reveal-on-scroll text-5xl sm:text-6xl font-medium bg-black text-transparent bg-clip-text">
                 40+
               </h3>
-              <p className="mt-0 text-base sm:text-lg font-base tracking-wide">
+              <p className="reveal-on-scroll mt-0 text-base sm:text-lg font-base tracking-wide">
                 Years
               </p>
             </motion.div>
 
-            <motion.div variants={fadeVariants}>
-              <h3 className="text-5xl sm:text-6xl font-medium bg-black text-transparent bg-clip-text">
+            <motion.div variants={fadeVariants} className="reveal-on-scroll">
+              <h3 className="reveal-on-scroll text-5xl sm:text-6xl font-medium bg-black text-transparent bg-clip-text">
                 500+
               </h3>
-              <p className="mt-0 text-base sm:text-lg font-base tracking-wide">
+              <p className="reveal-on-scroll mt-0 text-base sm:text-lg font-base tracking-wide">
                 Properties
               </p>
             </motion.div>

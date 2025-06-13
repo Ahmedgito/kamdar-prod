@@ -67,14 +67,14 @@ const Form = () => {
         />
 
         <motion.div
-          className="max-w-xl w-full bg-transparent p-6 md:p-10 rounded-lg relative z-10"
+          className="reveal-on-scroll max-w-xl w-full bg-transparent p-6 md:p-10 rounded-lg relative z-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
         >
           <h2
-            className="text-4xl md:text-7xl font-bold text-center text-black"
+            className="reveal-on-scroll text-4xl md:text-7xl font-bold text-center text-black"
             style={{ fontFamily: 'Luxerie' }}
             custom={0}
             variants={fadeUp}
@@ -83,7 +83,7 @@ const Form = () => {
           </h2>
 
           <motion.p
-            className="text-center text-sm mb-8 text-black font-lexend"
+            className="reveal-on-scroll text-center text-sm mb-8 text-black font-lexend"
             custom={1}
             variants={fadeUp}
           >
@@ -91,7 +91,7 @@ const Form = () => {
           </motion.p>
 
           <motion.form
-            className="space-y-4 font-lexend font-[300]"
+            className="reveal-on-scroll space-y-4 font-lexend font-[300]"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

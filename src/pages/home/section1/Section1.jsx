@@ -24,7 +24,7 @@ const fadeVariants = {
 const Section1 = () => {
   return (
     <motion.section
-      className="max-w-full h-screen bg-cover -mt-10 bg-center flex items-center justify-center"
+      className="reveal-on-scroll max-w-full h-screen bg-cover -mt-10 bg-center flex items-center justify-center"
       style={{
         backgroundImage: `url(${Bg})`,
       }}
@@ -36,7 +36,7 @@ const Section1 = () => {
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         <motion.h1
           style={{ fontFamily: 'Luxerie' }}
-          className="text-white text-center text-4xl md:text-7xl leading-[0.8]"
+          className="reveal-on-scroll text-white text-center text-4xl md:text-7xl leading-[0.8]"
           variants={fadeVariants}
           initial="hidden"
           animate="visible"
