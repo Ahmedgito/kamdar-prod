@@ -3,8 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Bg from '../../../assets/2.png';
 
-const headingVariants = {
-  hidden: { opacity: 0, y: 50 },
+const fadeVariants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -23,18 +23,21 @@ const Section2 = () => {
         backgroundImage: `url(${Bg})`,
       }}
     >
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+      <motion.div
+        className="relative z-10 flex flex-col items-center justify-center w-full h-full"
+        variants={fadeVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <motion.h1
-          variants={headingVariants}
-          initial="hidden"
-          animate="visible"
           style={{ fontFamily: 'Luxerie' }}
           className="text-white text-center text-4xl md:text-8xl leading-[0.8]"
         >
           ELEVATED LIVING.<br />
           WITHIN REACH
         </motion.h1>
-      </div>
+      </motion.div>
     </section>
   );
 };

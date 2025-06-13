@@ -8,7 +8,7 @@ const fadeUp = {
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5 },
+    transition: { delay: i * 0.1, duration: 2 },
   }),
 };
 
@@ -19,7 +19,6 @@ const Form = () => {
         .section6-shadow {
           position: relative;
         }
-
         .section6-shadow::before,
         .section6-shadow::after {
           content: '';
@@ -30,17 +29,14 @@ const Form = () => {
           pointer-events: none;
           z-index: 10;
         }
-
         .section6-shadow::before {
           left: 0;
           background: linear-gradient(to right, white, transparent);
         }
-
         .section6-shadow::after {
           right: 0;
           background: linear-gradient(to left, white, transparent);
         }
-
         .bg-layer {
           position: absolute;
           top: 0;
@@ -50,12 +46,10 @@ const Form = () => {
           background-size: cover;
           background-position: center;
         }
-
         .bg-base {
           background-image: url(${formBg});
           z-index: 1;
         }
-
         .bg-overlay {
           background-image: url(${bgImage});
           z-index: 2;
@@ -63,27 +57,26 @@ const Form = () => {
       `}</style>
 
       <section className="w-full py-16 px-4 md:px-0 flex justify-center items-center bg-black text-white section6-shadow relative">
-        <div className="bg-layer bg-base"></div>
+        <div className="bg-layer bg-base" />
         <motion.div
           className="bg-layer bg-overlay"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        ></motion.div>
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 3 }}
+        />
 
         <motion.div
           className="max-w-xl w-full bg-transparent p-6 md:p-10 rounded-lg relative z-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-          }}
+          variants={fadeUp}
         >
           <h2
             className="text-4xl md:text-7xl font-bold text-center text-black"
             style={{ fontFamily: 'Luxerie' }}
+            custom={0}
             variants={fadeUp}
           >
             REGISTER NOW
@@ -100,7 +93,9 @@ const Form = () => {
           <motion.form
             className="space-y-4 font-lexend font-[300]"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
           >
             <motion.div className="flex gap-4" custom={2} variants={fadeUp}>
               <input
@@ -142,7 +137,7 @@ const Form = () => {
                 placeholder="Message"
                 rows="4"
                 className="w-full px-4 py-2 bg-transparent border border-black rounded-md text-black placeholder-black"
-              ></textarea>
+              />
             </motion.div>
 
             <motion.button

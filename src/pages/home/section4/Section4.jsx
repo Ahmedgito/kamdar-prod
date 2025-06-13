@@ -16,7 +16,7 @@ const Section4 = () => {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 2 }}
           viewport={{ once: true }}
           className="text-white font-light mb-10"
           style={{

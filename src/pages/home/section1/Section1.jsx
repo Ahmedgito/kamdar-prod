@@ -3,39 +3,50 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Bg from '../../../assets/1.png';
 
-const headingVariants = {
-  hidden: { opacity: 0, y: 50 },
+const fadeVariants = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
-      duration: 1,
+      duration: 3,
       ease: 'easeOut',
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeIn',
     },
   },
 };
 
 const Section1 = () => {
   return (
-    <section
+    <motion.section
       className="max-w-full h-screen bg-cover -mt-10 bg-center flex items-center justify-center"
       style={{
         backgroundImage: `url(${Bg})`,
       }}
+      variants={fadeVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
     >
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         <motion.h1
-          variants={headingVariants}
-          initial="hidden"
-          animate="visible"
           style={{ fontFamily: 'Luxerie' }}
           className="text-white text-center text-4xl md:text-7xl leading-[0.8]"
+          variants={fadeVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
         >
           BUILT FOR GENERATIONS.<br />
           CRAFTED WITH PURPOSE
         </motion.h1>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
