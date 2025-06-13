@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { FiX } from 'react-icons/fi';
 import { Sling as Hamburger } from 'hamburger-react';
-import { motion } from 'framer-motion'; // 👈 Import motion
+import { motion, AnimatePresence } from 'framer-motion'; // 👈 Import motion and AnimatePresence
 import logo from '../assets/logo.png';
 
 const navLinks = [
@@ -109,50 +109,57 @@ const Header = () => {
       </nav>
 
       {/* Mobile Drawer */}
-      <Dialog
-        open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
-        className="fixed inset-0 z-[100] md:hidden"
-      >
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm" aria-hidden="true" />
-<motion.div
-  initial={{ x: '-100%' }}
-  animate={{ x: 0 }}
-  exit={{ x: '-100%' }}
-  transition={{ duration: 0.4 }}
-  className="fixed inset-y-0 left-0 w-64 bg-transparent backdrop-blur-md p-6 flex flex-col gap-8"
->
-  <div className="flex items-center justify-between mb-8">
-    <button
-      onClick={() => setMobileOpen(false)}
-      className="text-white text-2xl focus:outline-none"
-      aria-label="Close menu"
-    >
-      <FiX />
-    </button>
-    <img src={logo} alt="Logo" className="w-24 object-contain ml-auto" />
-  </div>
-  <nav className="flex flex-col gap-6">
-    {navLinks.map((link) => (
-      <a
-        key={link.href}
-        href={link.href}
-        className="text-white text-lg font-light hover:underline"
+      <AnimatePresence>
+  {mobileOpen && (
+    <>
+      {/* Backdrop */}
+      <motion.div
+        key="drawer-backdrop"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-0 z-50 w-full h-screen bg-transparent backdrop-blur-md p-6 flex flex-col gap-8 md:hidden"
+
         onClick={() => setMobileOpen(false)}
+      />
+
+      {/* Drawer */}
+      <motion.div
+        key="drawer-panel"
+        initial={{ x: '-100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '-100%' }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        className="fixed inset-y-0 left-0 w-64 h-screen z-50 bg-black backdrop-blur-md p-6 flex flex-col gap-8 md:hidden"
       >
-        {link.label}
-      </a>
-    ))}
-  </nav>
-  <a
-    href="#contact"
-    className="mt-auto bg-white text-black rounded-md px-6 py-2 font-light shadow hover:bg-gray-200 transition"
-    onClick={() => setMobileOpen(false)}
-  >
-    Contact Us
-  </a>
-</motion.div>
-      </Dialog>
+        <div className="flex items-center justify-between mb-8">
+       
+          <img src={logo} alt="Logo" className="w-24 object-contain ml-auto" />
+        </div>
+        <nav className="flex flex-col gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-white text-lg font-light hover:underline"
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <a
+          href="#contact"
+          className="mt-auto bg-white text-black rounded-md px-6 py-2 font-light shadow hover:bg-gray-200 transition"
+          onClick={() => setMobileOpen(false)}
+        >
+          Contact Us
+        </a>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
     </motion.header>
   );
 };
